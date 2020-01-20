@@ -11,6 +11,11 @@ function probarValidarNombre() {
       'Validar nombre no validó que el nombre sea menor a 50 caracteres',
   );
 
+  console.assert(
+      validarNombre("123123123") === "El campo nombre sólo acepta letras",
+      "Validar Nombre no validó que el nombre sólo tenga letras"
+  );
+
   //testear tmb el caso positivo
   console.assert(
       validarNombre('Fabricio') === '',
@@ -44,6 +49,11 @@ function probarValidarDescripcionRegalo(){
     console.assert(
         validarDescripcionRegalo('Regalo') === '',
         'la funcion validar descripcion regalono funcionó con una descripción correcta'
+    );
+
+    console.assert(
+        validarDescripcionRegalo(",.........") === "El campo descripcion solo puede tener numeros y letras",
+        "La funcion validar descripcion regalo no validó que fuera solo  numeros y letras"
     );
 }
 
